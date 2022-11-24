@@ -1,28 +1,11 @@
-echo "Enter three numbers:"
-read a
-read b
-read c
-
-d=$((a+b*c))
-e=$((a%b+c))
-f=$((c+a/b))
-g=$((a*b+c))
-
-if [[ $d > $e ]] && [[ $d > $f ]] && [[ $d > $g ]]; then
-    echo "$d is maximum"
-elif [[ $e > $f ]] && [[ $e > $g ]]; then
-    echo "$e is maximum"
-elif [[ $f > $g ]]; then
-    echo "$f is maximum"
-else
-    echo "$g is maximum"
-fi
-
-if [[ $d < $e ]] && [[ $d < $f ]] && [[ $d < $g ]]; then
-    echo "$d is minimum"
-elif [[ $e < $f ]] && [[ $e < $g ]]; then
-    echo "$e is minimum"
-elif [[ $f < $g ]]; then
-    echo "$f is minimum"
-else
-    echo
+1) echo "One";;
+2) echo "Two";;
+3) echo "Three";;
+4) echo "Four";;
+5) echo "Five";;
+6) echo "Six";;
+7) echo "Seven";;
+8) echo "Eight";;
+9) echo "Nine";;
+*) echo "Invalid input";;
+esac
