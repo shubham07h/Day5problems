@@ -1,27 +1,28 @@
-echo "Enter a number between 1-7"
-read num
+echo "Enter three numbers:"
+read a
+read b
+read c
 
-if [ $num -eq 1 ]
-then
-echo "Sunday"
-elif [ $num -eq 2 ]
-then
-echo "Monday"
-elif [ $num -eq 3 ]
-then
-echo "Tuesday"
-elif [ $num -eq 4 ]
-then
-echo "Wednesday"
-elif [ $num -eq 5 ]
-then
-echo "Thursday"
-elif [ $num -eq 6 ]
-then
-echo "Friday"
-elif [ $num -eq 7 ]
-then
-echo "Saturday"
+d=$((a+b*c))
+e=$((a%b+c))
+f=$((c+a/b))
+g=$((a*b+c))
+
+if [[ $d > $e ]] && [[ $d > $f ]] && [[ $d > $g ]]; then
+    echo "$d is maximum"
+elif [[ $e > $f ]] && [[ $e > $g ]]; then
+    echo "$e is maximum"
+elif [[ $f > $g ]]; then
+    echo "$f is maximum"
 else
-echo "Invalid input"
+    echo "$g is maximum"
 fi
+
+if [[ $d < $e ]] && [[ $d < $f ]] && [[ $d < $g ]]; then
+    echo "$d is minimum"
+elif [[ $e < $f ]] && [[ $e < $g ]]; then
+    echo "$e is minimum"
+elif [[ $f < $g ]]; then
+    echo "$f is minimum"
+else
+    echo
