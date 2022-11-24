@@ -1,16 +1,61 @@
-for i in {1..5}
-do
-  # Get a random 3 digit value
-  random=$( jot -r 1 100 999 )
+if [ $# -ne 2 ]
+then
+echo "usage: ./a.out day month"
+exit 1
+fi
 
-  # Print the value
-  echo $random
-done
+if [ $2 -eq 3 ]
+then
+if [ $1 -ge 20 ] && [ $1 -le 31 ]
+then
+echo "true"
+exit 0
+fi
+fi
 
-# Get the minimum and maximum value
-min=$( sort -n <<< "$( echo $random )" | head -1 )
-max=$( sort -n <<< "$( echo $random )" | tail -1 )
+if [ $2 -eq 4 ]
+then
+if [ $1 -ge 1 ] && [ $1 -le 30 ]
+then
+echo "true"
+exit 0
+fi
+fi
 
-# Print the minimum and maximum value
-echo "Min: $min"
-echo "Max: $max"
+if [ $2 -eq 5 ]
+then
+if [ $1 -ge 1 ] && [ $1 -le 31 ]
+then
+echo "true"
+exit 0
+fi
+fi
+
+if [ $2 -eq 6 ]
+then
+if [ $1 -ge 1 ] && [ $1 -le 20 ]
+then
+echo "true"
+exit 0
+fi
+fi
+
+echo "false"
+exit 0
+=============================
+Q3
+echo "Enter a year"
+read y
+if [ $((y % 4)) -eq 0 ] && [ $((y % 100)) -ne 0 ] || [ $((y % 400)) -eq 0 ];
+then
+echo "$y is a leap year "
+else
+echo "$y is not a leap year"
+fi
+========================================
+q4
+if [ $(($RANDOM%2)) -eq 0 ]; then
+  echo "Heads"
+else
+  echo "Tails"
+fi
