@@ -1,11 +1,27 @@
-1) echo "One";;
-2) echo "Two";;
-3) echo "Three";;
-4) echo "Four";;
-5) echo "Five";;
-6) echo "Six";;
-7) echo "Seven";;
-8) echo "Eight";;
-9) echo "Nine";;
-*) echo "Invalid input";;
-esac
+echo "Enter the number : "
+read a
+
+if [ $a -eq 1 ]
+then
+echo "Sunday"
+elif [ $a -eq 2 ]
+then
+echo "Monday"
+elif [ $a -eq 3 ]
+then
+echo "Tuesday"
+elif [ $a -eq 4 ]
+then
+echo "Wednesday"
+elif [ $a -eq 5 ]
+then
+echo "Thursday"
+elif [ $a -eq 6 ]
+then
+echo "Friday"
+elif [ $a -eq 7 ]
+then
+echo "Saturday"
+else
+echo "Invalid number"
+fi
